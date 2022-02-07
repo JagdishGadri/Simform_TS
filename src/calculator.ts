@@ -5,10 +5,10 @@ let secondTray = document.querySelector('.second_tray') as HTMLButtonElement;
 let memoryActive = document.getElementsByClassName('memory_function') as HTMLCollectionOf<HTMLElement>;
 let secondFunctions = document.getElementsByClassName('second_functions') as HTMLCollectionOf<HTMLElement>;
 
-
+type strOrNum = string|number; 
 let arr_list:number[]= [];
 let buttonText: string;
-let screenOutput:any= '';
+let screenOutput:strOrNum= '';
 
 
 for (let item of buttons) {
@@ -17,12 +17,12 @@ for (let item of buttons) {
         if (buttonText === 'x') {
             buttonText = '*';
             screenOutput += buttonText;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '÷') {
             buttonText = '/';
             screenOutput += buttonText;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText == 'C') {
             screenOutput = '';
@@ -30,7 +30,7 @@ for (let item of buttons) {
         }
         else if (buttonText === '=') {
             screenOutput= eval(display.value);
-            display.value=screenOutput;
+            display.value=screenOutput.toString();
         }
         else if (buttonText === '⌫') {
             screenOutput = display.value.substring(0, display.value.length - 1);
@@ -40,12 +40,12 @@ for (let item of buttons) {
         // Angle unit converter functions
         else if (buttonText === 'DEG') {
             screenOutput =parseFloat(display.value) * (180 / Math.PI)
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             oldOption.innerText = 'RAD';
         }
         else if (buttonText === 'RAD') {
             screenOutput = parseFloat(display.value)* (Math.PI / 180)
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             oldOption.innerText = 'DEG';
         }
         else if (buttonText === 'F-E') {
@@ -71,12 +71,12 @@ for (let item of buttons) {
         else if (buttonText === 'M+') {
             screenOutput = (arr_list[arr_list.length - 1]) + parseFloat(display.value);
             arr_list.push(screenOutput);
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'M-') {
         
             screenOutput = (arr_list[arr_list.length - 1]) - parseFloat(display.value);
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             arr_list[arr_list.length - 1] = screenOutput;
         }
         else if (buttonText === 'MR') {
@@ -143,55 +143,55 @@ for (let item of buttons) {
 
         else if (buttonText === 'x2') {
             screenOutput = Math.pow(parseFloat(display.value), 2);
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '√x') {
             screenOutput = Math.sqrt(parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'xy') {
             buttonText = '**';
             screenOutput += buttonText;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '10x') {
             screenOutput = Math.pow(10, parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'log') {
             screenOutput = Math.log10(parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'ln') 
         {
             screenOutput = Math.log(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'x3') {
             screenOutput = Math.pow(parseInt(display.value), 3);
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '3√x') {
             screenOutput = Math.cbrt(parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '2x') {
             screenOutput = Math.pow(2, parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'ex') {
             screenOutput = Math.pow(Math.E, parseInt(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
 
 
         else if (buttonText === 'π') {
             screenOutput = Math.PI;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'e') {
             screenOutput = Math.E;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === 'n!') {
             var i:number, num:number, f;
@@ -202,18 +202,18 @@ for (let item of buttons) {
             }
             i = i - 1;
             screenOutput = f;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '1/x') 
         {
             if (display.value == '') {
                     display.value = '0';
                     screenOutput = 1 / parseInt(display.value);
-                    display.value = screenOutput;
+                    display.value = screenOutput.toString();
                 }
              else{
                     screenOutput = 1 / parseInt(display.value);
-                    display.value = screenOutput;
+                    display.value = screenOutput.toString();
                 }
         }
         else if (buttonText === '|x|') 
@@ -221,11 +221,11 @@ for (let item of buttons) {
             if(display.value==''){
                 display.value='0';
                 screenOutput = Math.abs(parseInt(display.value));
-                display.value = screenOutput;
+                display.value = screenOutput.toString();
             }
             else{
                 screenOutput = Math.abs(parseInt(display.value));
-                display.value = screenOutput;
+                display.value = screenOutput.toString();
             }
         }
         
@@ -234,21 +234,21 @@ for (let item of buttons) {
             if (display.value == '') {
                     display.value = '0';
                     screenOutput = Math.pow(Math.E, parseInt(display.value));
-                    display.value = screenOutput;
+                    display.value = screenOutput.toString();
                 }
              else{
                 screenOutput = Math.pow(Math.E, parseInt(display.value));
-                display.value = screenOutput;
+                display.value = screenOutput.toString();
                 }
         }
         else if (buttonText === 'mod') {
             buttonText = '%';
             screenOutput += buttonText;
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
         }
         else if (buttonText === '+/-') {
             screenOutput = parseInt(display.value) * (-1);
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
 
         }
         
@@ -261,12 +261,12 @@ for (let item of buttons) {
             }
             else{
             screenOutput+=buttonText;
-            display.value=screenOutput;
+            display.value=screenOutput.toString();
             }
         }
         else{
         screenOutput += buttonText;
-        display.value = screenOutput;
+        display.value = screenOutput.toString();
         }
     })
 }
@@ -275,15 +275,15 @@ function trigno(fun:string):void {
     switch (fun) {
         case "sine":
             screenOutput = Math.sin(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
         case "cosine":
             screenOutput = Math.cos(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
         case "tan":
             screenOutput = Math.tan(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
     }
 }
@@ -292,15 +292,15 @@ function dropDownFun(fun:string) :void{
     switch (fun) {
         case "floor":
             screenOutput = Math.floor(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
         case "ceil":
             screenOutput = Math.ceil(parseFloat(display.value));
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
         case "random":
             screenOutput = Math.random();
-            display.value = screenOutput;
+            display.value = screenOutput.toString();
             break;
 
     }
