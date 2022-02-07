@@ -2,8 +2,8 @@ let display= document.getElementById('screen') as HTMLInputElement;
 let buttons= document.querySelectorAll('button') as  NodeListOf<HTMLButtonElement>;
 let oldOption = document.querySelector('.angle') as HTMLButtonElement;
 let secondTray = document.querySelector('.second_tray') as HTMLButtonElement;
-let memoryActive = document.querySelectorAll('memory_function') as NodeListOf<HTMLButtonElement>;
-let secondFunctions = document.querySelectorAll('second_functions') as NodeListOf<HTMLButtonElement>;
+let memoryActive = document.getElementsByClassName('memory_function') as HTMLCollectionOf<HTMLElement>;
+let secondFunctions = document.getElementsByClassName('second_functions') as HTMLCollectionOf<HTMLElement>;
 
 
 let arr_list:number[]= [];
@@ -80,7 +80,7 @@ for (let item of buttons) {
             arr_list[arr_list.length - 1] = screenOutput;
         }
         else if (buttonText === 'MR') {
-            let arr_val: any= arr_list.slice(arr_list.length - 1, arr_list.length);
+            let arr_val: number[]= arr_list.slice(arr_list.length - 1, arr_list.length);
             display.value =arr_val.toString()
         }
 
