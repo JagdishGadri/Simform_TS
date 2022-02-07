@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-TS</title>
+     <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <div class="container">
+        <input type="text" id="screen" placeholder="0" readonly>
+
+        <div class="calculator">
+            <table>
+                <tr>
+                    <td><button class="angle">DEG</button></td>
+                    <td><button>F-E</button></td>
+
+                </tr>
+                <tr>
+                    <td><button style="color:grey" ; class="memory_function">MC</button> </td>
+                    <td><button style="color:grey" ; class="memory_function">MR</button> </td>
+                    <td><button>M+</button> </td>
+                    <td><button>M-</button> </td>
+                    <td><button>MS </button> </td>
+                </tr>
+                <tr>
+                    <!-- 'value' is passed as argument to trigno() and dropDownFun() functions -->
+                    <td colspan="2">
+                        <select onchange="trigno(value);">
+                            <option value="none">◭ Trignometry</option>
+                            <option value="sine">Sin</option>
+                            <option value="cosine">Cos</option>
+                            <option value="tan">Tan</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <select onchange="dropDownFun(value);">
+                            <option value="none">𝑓 Function</option>
+                            <option value="floor">Floor</option>
+                            <option value="ceil">Ceil</option>
+                            <option value="random">Random</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button class="second_tray">2<sup>nd</sup></button></td>
+                    <td><button>π</button> </td>
+                    <td><button>e</button></td>
+                    <td><button>C</button></td>
+                    <td><button>⌫ </button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">x<sup>2</sup></button></td>
+                    <td><button>1/x</button></td>
+                    <td><button>|x|</button></td>
+                    <td><button>exp</button></td>
+                    <td><button>mod</button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">√x</button></td>
+                    <td><button>(</button></td>
+                    <td><button>)</button></td>
+                    <td><button>n!</button></td>
+                    <td><button>÷</button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">x<sup>y</sup></button> </td>
+                    <td><button class="number">7</button></td>
+                    <td><button class="number">8</button></td>
+                    <td><button class="number">9</button></td>
+                    <td><button>x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">10<sup>x</sup> </button></td>
+                    <td><button class="number">4</button></td>
+                    <td><button class="number">5</button></td>
+                    <td><button class="number">6</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">log</button></td>
+                    <td><button class="number">1</button></td>
+                    <td><button class="number">2</button></td>
+                    <td><button class="number">3</button></td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="second_functions">ln</button></td>
+                    <td><button class="number">+/-</button></td>
+                    <td><button class="number">0</button></td>
+                    <td><button class="number">.</button></td>
+                    <td><button class="evaluate">=</button></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+     <!-- External JavaScript code -->
+    <script src="calculator.js"></script>
+</body>
+
+</html>
